@@ -33,14 +33,13 @@ encryptBtn.onclick = function encrypt(){
             if (encryptedText[i] > 26){
                 encryptedText[i] -= 26;
             }
-        console.log(`Ciphered code: ${encryptedText}\nKey: ${key}`);
         encryptedText[i] = (String.fromCharCode(96 + encryptedText[i]));    // Converts number to chars
     }
     
     
-    encryptedText = encryptedText.toString().replace(/,/g,'');
-    keyOutput.innerHTML = strKey;
-    cipherOutput.innerHTML = encryptedText;
+    encryptedText = encryptedText.toString().replaceAll(',', '');
+    keyOutput.textContent = strKey;
+    cipherOutput.textContent = encryptedText;
 
 }
 // Decryption
@@ -76,7 +75,6 @@ decryptBtn.onclick = function decrypt(){
             plainText[i] = " ";
         }
     }
-    console.log(plainText)
     plainText = plainText.toString().replace(/,/g,'');
-    plainTextOutput.innerHTML = plainText;
+    plainTextOutput.textContent = plainText;
 }
