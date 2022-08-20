@@ -8,15 +8,29 @@
 </head>
 <body>
     <h1>Pizza Hut Cipher</h1>
+    <h3>Encryptor</h3>
     <label>Enter a plaintext</label>
     <input id="plainText">
-    <input type="submit" id="submitButton">
+    <input type="submit" id="encryptButton">
 
-    <br><br><br>
+    <br><br>
     <label>Your cipher text is:</label>
     <label id="cipherOutput"></label> <br>
     <label>Your key is:</label>
     <label id="keyOutput"></label>
+    <br>
+
+    <h3>Decryptor</h3>
+    <label>Enter your ciphertext</label>
+    <input id="cipherText">
+    <br>
+    <label>Enter your key</label>
+    <input id="keyText">
+    <br>
+    <input type="submit" id="decryptBtn">
+    <br><br>
+    <label>Your plaintext is:</label>
+    <label id="plainTextOutput"></label>
 
     <script src="app.js"></script>
 </body>
