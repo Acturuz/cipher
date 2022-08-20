@@ -16,7 +16,7 @@ encryptBtn.onclick = function encrypt(){
     // Changes input into ASCII codes with a -96 offset (eg: a -> 97 -> 1)
     for (const input of inputs){
         cipher.push(input.charCodeAt() - 96);
-    }
+    } 
     // Key generation
     for (const chars of cipher){
         let keyVal = Math.floor(Math.random() * 25 + 1);    // Creates random number from 1 - 25 
@@ -33,9 +33,11 @@ encryptBtn.onclick = function encrypt(){
             if (encryptedText[i] > 26){
                 encryptedText[i] -= 26;
             }
-            
+        console.log(`Ciphered code: ${encryptedText}\nKey: ${key}`);
         encryptedText[i] = (String.fromCharCode(96 + encryptedText[i]));    // Converts number to chars
     }
+    
+    
     encryptedText = encryptedText.toString().replace(/,/g,'');
     keyOutput.innerHTML = strKey;
     cipherOutput.innerHTML = encryptedText;
@@ -43,8 +45,8 @@ encryptBtn.onclick = function encrypt(){
 }
 // Decryption
 decryptBtn.onclick = function decrypt(){
-    cipherInput = document.getElementById("cipherText").value.toLowerCase();
-    keyInput = document.getElementById("keyText").value.toLowerCase();
+    cipherInput = document.getElementById("cipherText").value;
+    keyInput = document.getElementById("keyText").value;
 
     let key = [];
     let cipher = [];
